@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Signup Page</title>
+{% endblock %}
+
+{% block body %}
+<img src="signup.jpg" alt="signup_background_image">
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <form method="post">
+      <input type="text" id="name" class="fadeIn second" name="name" placeholder="Name" required><br><br>
+      <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email" required><br><br>
+      <input type="password" id="passwordID" class="fadeIn third" name="password" placeholder="Password" required><br><br>
+      <input type="password" name="cpassword" placeholder="enter confirm password" oninput="check(this)" required><br><br>
+      <input type="submit" class="fadeIn fourth" value="signup"><br><br>
+    </form>
+
+    <!-- <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div> -->
+
+   </div>
+</div>
+ <div><br><br></div>
+ <div>Emails:</div>
+ <table>
+   <tbody>
+     {% for row in data %}
+     <tr><td> {{ row }} </td></tr>
+     {% endfor %}
+
+   </tbody>
+ </table>
+
+   <script language='javascript' type='text/javascript'>
+  function check(input) {
+  if (input.value != document.getElementById('passwordID').value) {
+  input.setCustomValidity('Password Must be Matching.');
+  } else {
+  // input is valid -- reset the error message
+  input.setCustomValidity('');
+  }
+  }
+  </script>
+
+{% endblock %}

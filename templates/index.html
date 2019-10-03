@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Flask Form</title>
+  </head>
+  <body onload='document.form1.text1.focus()'>
+    <form method="post">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" id = "email" name = "email" class="form-control" placeholder="Enter email" required>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+    <div><br><br></div>
+    <div>Emails:</div>
+    <table>
+      <tbody>
+        {%for row in data%}
+        <tr><td>{{row}}</td></tr>
+        {%endfor%}
+      </tbody>
+    </table>
+
+
+
+  </body>
+</html>
